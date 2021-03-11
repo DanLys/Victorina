@@ -17,14 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-//        let tabBarController = UITabBarController()
-//        let menuViewController = MenuViewController()
-//        menuViewController.tabBarItem = UITabBarItem(title: "Menu", image: nil, selectedImage: nil)
         
         let menuTaskViewController = MenuTaskViewController()
-//        menuTaskViewController.tabBarItem = UITabBarItem(title: "Tasks", image: nil, selectedImage: nil)
-        
-//        tabBarController.viewControllers = [menuViewController, menuTaskViewController]
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = menuTaskViewController

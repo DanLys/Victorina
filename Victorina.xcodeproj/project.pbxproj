@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C6D3C8525FA28BD00E46971 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3C8425FA28BD00E46971 /* MenuViewController.swift */; };
+		3C6D3C9F25FA382200E46971 /* ConfigOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3C9E25FA382200E46971 /* ConfigOffset.swift */; };
+		3C6D3CAD25FA652900E46971 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3CAC25FA652900E46971 /* AnimationController.swift */; };
 		3CE5EB4125BD6F3A00969C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EB4025BD6F3A00969C55 /* AppDelegate.swift */; };
 		3CE5EB4325BD6F3A00969C55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EB4225BD6F3A00969C55 /* SceneDelegate.swift */; };
 		3CE5EB4525BD6F3A00969C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EB4425BD6F3A00969C55 /* ViewController.swift */; };
@@ -16,7 +19,6 @@
 		3CE5EB5825BD6F3F00969C55 /* VictorinaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EB5725BD6F3F00969C55 /* VictorinaTests.swift */; };
 		3CE5EB6325BD6F3F00969C55 /* VictorinaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EB6225BD6F3F00969C55 /* VictorinaUITests.swift */; };
 		3CE5EBAD25BD7DCD00969C55 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EBAC25BD7DCD00969C55 /* MenuView.swift */; };
-		3CE5EBB525BD7DE200969C55 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EBB425BD7DE200969C55 /* MenuViewController.swift */; };
 		3CE5EBC025BD865900969C55 /* ConfigColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EBBF25BD865900969C55 /* ConfigColors.swift */; };
 		3CE5EBC525C5556D00969C55 /* MenuTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EBC425C5556D00969C55 /* MenuTasksView.swift */; };
 		3CE5EBCA25C5557D00969C55 /* MenuTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5EBC925C5557D00969C55 /* MenuTasksViewController.swift */; };
@@ -47,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C6D3C8425FA28BD00E46971 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3C6D3C9E25FA382200E46971 /* ConfigOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigOffset.swift; sourceTree = "<group>"; };
+		3C6D3CAC25FA652900E46971 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		3CE5EB3D25BD6F3A00969C55 /* Victorina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Victorina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE5EB4025BD6F3A00969C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CE5EB4225BD6F3A00969C55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 		3CE5EB6225BD6F3F00969C55 /* VictorinaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorinaUITests.swift; sourceTree = "<group>"; };
 		3CE5EB6425BD6F3F00969C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE5EBAC25BD7DCD00969C55 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		3CE5EBB425BD7DE200969C55 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Victorina/MenuViewController.swift; sourceTree = SOURCE_ROOT; };
 		3CE5EBBF25BD865900969C55 /* ConfigColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigColors.swift; sourceTree = "<group>"; };
 		3CE5EBC425C5556D00969C55 /* MenuTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTasksView.swift; sourceTree = "<group>"; };
 		3CE5EBC925C5557D00969C55 /* MenuTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTasksViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C6D3C8025FA286100E46971 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CE5EBC925C5557D00969C55 /* MenuTasksViewController.swift */,
+				3CE5EBFB25C562C000969C55 /* UndefineTaskViewController.swift */,
+				3CE5EC0725C5C02500969C55 /* TaskViewController.swift */,
+				3CE5EC0C25C7D6BA00969C55 /* ResultViewController.swift */,
+				3C6D3C8425FA28BD00E46971 /* MenuViewController.swift */,
+				3C6D3CAC25FA652900E46971 /* AnimationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3C6D3C8C25FA28DB00E46971 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CE5EBAC25BD7DCD00969C55 /* MenuView.swift */,
+				3CE5EBC425C5556D00969C55 /* MenuTasksView.swift */,
+				3CE5EBFC25C562C000969C55 /* UndefineTaskViewController.xib */,
+				3CE5EC0225C5C01900969C55 /* TaskView.swift */,
+				3CE5EC1125C7D6C400969C55 /* ResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C6D3C9025FA28E900E46971 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				3CE5EBBF25BD865900969C55 /* ConfigColors.swift */,
+				3C6D3C9E25FA382200E46971 /* ConfigOffset.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		3CE5EB3425BD6F3A00969C55 = {
 			isa = PBXGroup;
 			children = (
@@ -130,18 +168,10 @@
 				3CE5EB4925BD6F3F00969C55 /* Assets.xcassets */,
 				3CE5EB4B25BD6F3F00969C55 /* LaunchScreen.storyboard */,
 				3CE5EB4E25BD6F3F00969C55 /* Info.plist */,
-				3CE5EBAC25BD7DCD00969C55 /* MenuView.swift */,
-				3CE5EBB425BD7DE200969C55 /* MenuViewController.swift */,
-				3CE5EBBF25BD865900969C55 /* ConfigColors.swift */,
-				3CE5EBC425C5556D00969C55 /* MenuTasksView.swift */,
-				3CE5EBC925C5557D00969C55 /* MenuTasksViewController.swift */,
+				3C6D3C8C25FA28DB00E46971 /* Views */,
+				3C6D3C8025FA286100E46971 /* Controllers */,
+				3C6D3C9025FA28E900E46971 /* Config */,
 				3CE5EBDE25C5583200969C55 /* TasksDTO.swift */,
-				3CE5EBFB25C562C000969C55 /* UndefineTaskViewController.swift */,
-				3CE5EBFC25C562C000969C55 /* UndefineTaskViewController.xib */,
-				3CE5EC0225C5C01900969C55 /* TaskView.swift */,
-				3CE5EC0725C5C02500969C55 /* TaskViewController.swift */,
-				3CE5EC0C25C7D6BA00969C55 /* ResultViewController.swift */,
-				3CE5EC1125C7D6C400969C55 /* ResultView.swift */,
 			);
 			path = Victorina;
 			sourceTree = "<group>";
@@ -298,10 +328,12 @@
 				3CE5EC0D25C7D6BA00969C55 /* ResultViewController.swift in Sources */,
 				3CE5EB4525BD6F3A00969C55 /* ViewController.swift in Sources */,
 				3CE5EBC025BD865900969C55 /* ConfigColors.swift in Sources */,
+				3C6D3C8525FA28BD00E46971 /* MenuViewController.swift in Sources */,
 				3CE5EBCA25C5557D00969C55 /* MenuTasksViewController.swift in Sources */,
-				3CE5EBB525BD7DE200969C55 /* MenuViewController.swift in Sources */,
 				3CE5EC1225C7D6C400969C55 /* ResultView.swift in Sources */,
+				3C6D3C9F25FA382200E46971 /* ConfigOffset.swift in Sources */,
 				3CE5EBDF25C5583200969C55 /* TasksDTO.swift in Sources */,
+				3C6D3CAD25FA652900E46971 /* AnimationController.swift in Sources */,
 				3CE5EC0825C5C02500969C55 /* TaskViewController.swift in Sources */,
 				3CE5EBAD25BD7DCD00969C55 /* MenuView.swift in Sources */,
 				3CE5EBC525C5556D00969C55 /* MenuTasksView.swift in Sources */,

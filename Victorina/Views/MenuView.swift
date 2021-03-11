@@ -34,7 +34,7 @@ class MenuView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let screenWidth = UIScreen.main.bounds.width
+        let screenWidth = self.frame.width
         
         backgroundColor = ConfigColors.backgroundMenuColor
         

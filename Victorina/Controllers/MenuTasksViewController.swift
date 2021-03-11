@@ -13,7 +13,22 @@ class MenuTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(MenuTaskView(self, frame: view.frame))
+        let menuTaskView = MenuTaskView(self, frame: view.frame)
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(loadSwipeView(_ :)))
+        swipe.numberOfTouchesRequired = 1
+        swipe.direction = .right
+        
+        menuTaskView.addGestureRecognizer(swipe)
+        menuTaskView.isUserInteractionEnabled = true
+        
+        view.addSubview(menuTaskView)
+    }
+    
+    @objc func loadSwipeView(_ guester: UISwipeGestureRecognizer) {
+        let swipeController = MenuViewController()
+        swipeController.modalPresentationStyle = .overFullScreen
+        present(swipeController, animated: true, completion: nil)
     }
 }
 
