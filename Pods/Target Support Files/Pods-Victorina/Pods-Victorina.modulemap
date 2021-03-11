@@ -1,0 +1,6 @@
+module Pods_Victorina {
+  umbrella header "Pods-Victorina-umbrella.h"
+
+  export *
+  module * { export * }
+}

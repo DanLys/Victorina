@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2576610A53060F1134BD86F3 /* libPods-Victorina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAFD1E6355A1327B8D27585 /* libPods-Victorina.a */; };
 		3C6D3C8525FA28BD00E46971 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3C8425FA28BD00E46971 /* MenuViewController.swift */; };
 		3C6D3C9F25FA382200E46971 /* ConfigOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3C9E25FA382200E46971 /* ConfigOffset.swift */; };
 		3C6D3CAD25FA652900E46971 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3CAC25FA652900E46971 /* AnimationController.swift */; };
@@ -77,6 +78,9 @@
 		3CE5EC0725C5C02500969C55 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		3CE5EC0C25C7D6BA00969C55 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		3CE5EC1125C7D6C400969C55 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		6DAFD1E6355A1327B8D27585 /* libPods-Victorina.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Victorina.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90557C5F20A933DC6ABD7888 /* Pods-Victorina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Victorina.debug.xcconfig"; path = "Target Support Files/Pods-Victorina/Pods-Victorina.debug.xcconfig"; sourceTree = "<group>"; };
+		BCA848EB3BBAC9E4BBBB4574 /* Pods-Victorina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Victorina.release.xcconfig"; path = "Target Support Files/Pods-Victorina/Pods-Victorina.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2576610A53060F1134BD86F3 /* libPods-Victorina.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +150,8 @@
 				3CE5EB5625BD6F3F00969C55 /* VictorinaTests */,
 				3CE5EB6125BD6F3F00969C55 /* VictorinaUITests */,
 				3CE5EB3E25BD6F3A00969C55 /* Products */,
+				6BB3A76CDE4F04DC873500E2 /* Pods */,
+				AB18192AE181D3367EE336E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +201,24 @@
 			path = VictorinaUITests;
 			sourceTree = "<group>";
 		};
+		6BB3A76CDE4F04DC873500E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90557C5F20A933DC6ABD7888 /* Pods-Victorina.debug.xcconfig */,
+				BCA848EB3BBAC9E4BBBB4574 /* Pods-Victorina.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB18192AE181D3367EE336E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DAFD1E6355A1327B8D27585 /* libPods-Victorina.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CE5EB6725BD6F3F00969C55 /* Build configuration list for PBXNativeTarget "Victorina" */;
 			buildPhases = (
+				37372639C9F4FE4F846F36D4 /* [CP] Check Pods Manifest.lock */,
 				3CE5EB3925BD6F3A00969C55 /* Sources */,
 				3CE5EB3A25BD6F3A00969C55 /* Frameworks */,
 				3CE5EB3B25BD6F3A00969C55 /* Resources */,
@@ -319,6 +345,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37372639C9F4FE4F846F36D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Victorina-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3CE5EB3925BD6F3A00969C55 /* Sources */ = {
@@ -513,6 +564,7 @@
 		};
 		3CE5EB6825BD6F3F00969C55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90557C5F20A933DC6ABD7888 /* Pods-Victorina.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -532,6 +584,7 @@
 		};
 		3CE5EB6925BD6F3F00969C55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCA848EB3BBAC9E4BBBB4574 /* Pods-Victorina.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
