@@ -71,7 +71,8 @@ class TaskPreviewDTO {
     var count: Int
     var tasks: [AbstractTask]
     
-    init(id: Int, name: String, hardLevel: Int, count: Int, tasks: [AbstractTask]) {
+    init(id: Int = 0, name: String = "empty", hardLevel: Int = 0, count: Int = 0, tasks: [AbstractTask] = []) {
+        self.id = id
         self.name = name
         self.hardLevel = hardLevel
         self.count = count

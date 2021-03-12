@@ -10,6 +10,14 @@ import UIKit
 class MenuTaskViewController: UIViewController {
     
     var task: TaskPreviewDTO!
+    var resultCNT = 1
+    static var flag = false
+    
+    override func loadView() {
+        super.loadView()
+        
+        MenuTaskViewController.flag = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +44,17 @@ class MenuTaskViewController: UIViewController {
 extension MenuTaskViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        TaskPreviewService.getCountTaskPreview()
+        if !MenuTaskViewController.flag {
+            TaskPreviewService.getCountTaskPreview { [weak self] result in
+                self?.resultCNT = result
+                if !MenuTaskViewController.flag {
+                    tableView.reloadData()
+                    MenuTaskViewController.flag = true
+                }
+            }
+        }
+        
+        return resultCNT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -8,5 +8,5 @@
 import Foundation
 
 struct ServerConfig {
-    static let hostPort = "localhost:8889/"
+    static let hostPort = "http://localhost:8889/"
 }
