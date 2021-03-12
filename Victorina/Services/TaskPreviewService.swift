@@ -13,7 +13,7 @@ class TaskPreviewService {
     static let decoder = JSONDecoder()
     
     static func getTasksPreview(complition: @escaping ([TaskPreviewDTO]) -> Void) {
-        AF.request(ServerConfig.hostPort + "api/task/preview/get", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
+        AF.request(ServerConfig.hostPort + ServerConfig.getAllTaskPreview, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
             .validate()
             .responseJSON { response in
                 switch response.result {
