@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct ServerConfig {
+struct ServerConstants {
     static let hostPort = "http://localhost:8889/"
     static let getAllTaskPreview = "api/task/preview/get"
     static let getTaskByIndexAndPreviewId = "api/task/find/"
+    static let getTaskAnswersByTaskIndex = "api/task/answer/find/all/"
 }

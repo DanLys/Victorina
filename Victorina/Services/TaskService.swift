@@ -10,14 +10,27 @@ import SwiftyJSON
 
 class TaskService {
     
+    static var task: AbstractTask?
+    
     static func getCurrentTask(with index: Int, and taskPreviewId: Int, complition: @escaping (AbstractTask?) -> Void) {
-        AF.request(ServerConfig.hostPort + ServerConfig.getTaskByIndexAndPreviewId + "\(index)/\(taskPreviewId)",
+        AF.request(ServerConstants.hostPort + ServerConstants.getTaskByIndexAndPreviewId + "\(index)/\(taskPreviewId)",
                    method: .get,
                    encoding: JSONEncoding.default)
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    complition(JSONToAbstractTask(json: JSON(value)))
+                    print(JSON(value))
+                    
+                    task = JSONToAbstractTask(json: JSON(value))
+                    guard task != nil && task?.id != nil else {
+                        complition(task)
+                        return
+                    }
+                    
+                    TaskAnswersService.getAllAnswers(with: task!.id) { answers in
+                        TaskService.task?.answers = answers
+                        complition(task)
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -38,6 +51,7 @@ class TaskService {
             return nil
         }
         
+        resultTask.id = Int.init(json["id"].stringValue) ?? 0
         resultTask.name = json["name"].stringValue == "" ? "empty" : json["name"].stringValue
         resultTask.descriptions = json["descriptions"].stringValue
         resultTask.flagOfAnsweresType = Bool.init(json["flagOfCountAnswers"].stringValue) ?? false

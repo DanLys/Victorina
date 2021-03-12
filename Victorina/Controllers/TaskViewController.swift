@@ -33,6 +33,7 @@ class TaskViewController: UIViewController {
             resultViewController.modalPresentationStyle = .fullScreen
             if TaskViewController.flag {
                 present(resultViewController, animated: true, completion: nil)
+                TaskViewController.flag = false
             }
             return
         }
@@ -51,7 +52,7 @@ class TaskViewController: UIViewController {
             if cell?.accessoryType == UITableViewCell.AccessoryType.checkmark {
                 result += cell?.textLabel?.text ?? ""
             }
-            correctResult += (currentTask!.answers[index].1 ? currentTask!.answers[index].0 : "")
+            correctResult += (currentTask!.answers[index].isTrue ? currentTask!.answers[index].answer : "")
         }
         if correctResult == result {
             score += 1

@@ -89,7 +89,7 @@ extension TaskView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = taskDTO?.answers[indexPath.row].0
+        cell.textLabel?.text = taskDTO?.answers[indexPath.row].answer
         cell.textLabel?.textColor = ConfigColors.tableTextColor
         cell.backgroundColor = ConfigColors.backgroundTaskAnswerTableColor
         cell.accessoryType = .none

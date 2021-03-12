@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		2576610A53060F1134BD86F3 /* libPods-Victorina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAFD1E6355A1327B8D27585 /* libPods-Victorina.a */; };
 		3C23C9CD25FA964100EB5872 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23C9CC25FA964100EB5872 /* TaskService.swift */; };
-		3C23C9D525FA973B00EB5872 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23C9D425FA973B00EB5872 /* ServerConfig.swift */; };
+		3C23C9D525FA973B00EB5872 /* ServerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23C9D425FA973B00EB5872 /* ServerConstants.swift */; };
 		3C23C9DA25FB492800EB5872 /* TaskPreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23C9D925FB492800EB5872 /* TaskPreviewService.swift */; };
+		3C23C9EF25FBC19000EB5872 /* TaskAnswersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23C9EE25FBC19000EB5872 /* TaskAnswersService.swift */; };
+		3C23C9F725FBC2FD00EB5872 /* TaskAnswerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C23C9F625FBC2FD00EB5872 /* TaskAnswerDTO.swift */; };
 		3C6D3C8525FA28BD00E46971 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3C8425FA28BD00E46971 /* MenuViewController.swift */; };
 		3C6D3C9F25FA382200E46971 /* ConfigOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3C9E25FA382200E46971 /* ConfigOffset.swift */; };
 		3C6D3CAD25FA652900E46971 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D3CAC25FA652900E46971 /* AnimationController.swift */; };
@@ -54,8 +56,10 @@
 
 /* Begin PBXFileReference section */
 		3C23C9CC25FA964100EB5872 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
-		3C23C9D425FA973B00EB5872 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		3C23C9D425FA973B00EB5872 /* ServerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConstants.swift; sourceTree = "<group>"; };
 		3C23C9D925FB492800EB5872 /* TaskPreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPreviewService.swift; sourceTree = "<group>"; };
+		3C23C9EE25FBC19000EB5872 /* TaskAnswersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAnswersService.swift; sourceTree = "<group>"; };
+		3C23C9F625FBC2FD00EB5872 /* TaskAnswerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAnswerDTO.swift; sourceTree = "<group>"; };
 		3C6D3C8425FA28BD00E46971 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3C6D3C9E25FA382200E46971 /* ConfigOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigOffset.swift; sourceTree = "<group>"; };
 		3C6D3CAC25FA652900E46971 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			children = (
 				3C23C9CC25FA964100EB5872 /* TaskService.swift */,
 				3C23C9D925FB492800EB5872 /* TaskPreviewService.swift */,
+				3C23C9EE25FBC19000EB5872 /* TaskAnswersService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				3CE5EBDE25C5583200969C55 /* TasksDTO.swift */,
+				3C23C9F625FBC2FD00EB5872 /* TaskAnswerDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -162,7 +168,7 @@
 			children = (
 				3CE5EBBF25BD865900969C55 /* ConfigColors.swift */,
 				3C6D3C9E25FA382200E46971 /* ConfigOffset.swift */,
-				3C23C9D425FA973B00EB5872 /* ServerConfig.swift */,
+				3C23C9D425FA973B00EB5872 /* ServerConstants.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -401,11 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CE5EC0D25C7D6BA00969C55 /* ResultViewController.swift in Sources */,
+				3C23C9F725FBC2FD00EB5872 /* TaskAnswerDTO.swift in Sources */,
 				3CE5EB4525BD6F3A00969C55 /* ViewController.swift in Sources */,
+				3C23C9EF25FBC19000EB5872 /* TaskAnswersService.swift in Sources */,
 				3CE5EBC025BD865900969C55 /* ConfigColors.swift in Sources */,
 				3C6D3C8525FA28BD00E46971 /* MenuViewController.swift in Sources */,
 				3C23C9DA25FB492800EB5872 /* TaskPreviewService.swift in Sources */,
-				3C23C9D525FA973B00EB5872 /* ServerConfig.swift in Sources */,
+				3C23C9D525FA973B00EB5872 /* ServerConstants.swift in Sources */,
 				3CE5EBCA25C5557D00969C55 /* MenuTasksViewController.swift in Sources */,
 				3CE5EC1225C7D6C400969C55 /* ResultView.swift in Sources */,
 				3C6D3C9F25FA382200E46971 /* ConfigOffset.swift in Sources */,
