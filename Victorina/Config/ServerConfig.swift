@@ -10,4 +10,5 @@ import Foundation
 struct ServerConfig {
     static let hostPort = "http://localhost:8889/"
     static let getAllTaskPreview = "api/task/preview/get"
+    static let getTaskByIndexAndPreviewId = "api/task/find/"
 }

@@ -14,7 +14,7 @@ protocol AbstractTask {
     var flagOfAnsweresType: Bool { get set }
 }
 
-class SimpleTask: AbstractTask {
+class SimpleTaskDTO: AbstractTask {
     var name: String
     var descriptions: String
     var answers: [(String, Bool)]

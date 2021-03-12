@@ -13,16 +13,27 @@ class TaskViewController: UIViewController {
     var score: Int = 0
     var taskPreviewId: Int!
     var currentTask: AbstractTask?
+    static var flag = false
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        currentTask = TaskService.getCurrentTask(with: taskIndex, and: taskPreviewId)
+        if !TaskViewController.flag {
+            TaskService.getCurrentTask(with: taskIndex, and: taskPreviewId) {
+                [weak self] currentTask in
+                    self?.currentTask = currentTask
+                    if !TaskViewController.flag {
+                        TaskViewController.flag = true
+                        self?.view.setNeedsLayout()
+                    }
+            }
+        }
         
         guard currentTask != nil else {
             let resultViewController = ResultViewController(score: score)
             resultViewController.modalPresentationStyle = .fullScreen
-            present(resultViewController, animated: true, completion: nil)
+            if TaskViewController.flag {
+                present(resultViewController, animated: true, completion: nil)
+            }
             return
         }
         
@@ -46,6 +57,7 @@ class TaskViewController: UIViewController {
             score += 1
         }
         taskIndex += 1
+        TaskViewController.flag = false
         view.setNeedsLayout()
     }
 }
