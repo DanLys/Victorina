@@ -64,18 +64,23 @@ class TaskVideDTO: AbstractTask {
     }
 }
 
-class TaskPreviewDTO {
+class TaskPreviewDTO: Codable {
     var id: Int
     var name: String
     var hardLevel: Int
     var count: Int
-    var tasks: [AbstractTask]
     
-    init(id: Int = 0, name: String = "empty", hardLevel: Int = 0, count: Int = 0, tasks: [AbstractTask] = []) {
+    enum CodingKeys: CodingKey {
+        case id
+        case name
+        case hardLevel
+        case count
+    }
+    
+    init(id: Int = 0, name: String = "empty", hardLevel: Int = 0, count: Int = 0) {
         self.id = id
         self.name = name
         self.hardLevel = hardLevel
         self.count = count
-        self.tasks = tasks
     }
 }

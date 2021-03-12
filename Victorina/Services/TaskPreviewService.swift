@@ -6,30 +6,40 @@
 //
 
 import Alamofire
-import Foundation
+import SwiftyJSON
 
 class TaskPreviewService {
     
-    static func getCountTaskPreview(complition: @escaping ((Int) -> Void)) {
-        AF.request(ServerConfig.hostPort + "api/task/preview/count", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
+    static let decoder = JSONDecoder()
+    
+    static func getTasksPreview(complition: @escaping ([TaskPreviewDTO]) -> Void) {
+        AF.request(ServerConfig.hostPort + "api/task/preview/get", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil)
             .validate()
-            .responseString { response in
-                var result = 0
+            .responseJSON { response in
                 switch response.result {
-                case .success:
-                    do {
-                        result = Int(try response.result.get()) ?? 10
-                        complition(result)
-                    } catch {
-                        print("GOVNO")
+                case .success(let value):
+                    let json = JSON(value)
+                    
+                    var result = [TaskPreviewDTO]()
+                    
+                    for i in 0..<json.count {
+                        result.append(JSONToTaskPreview(json[i]))
                     }
+                    
+                    complition(result)
                 case .failure(let error):
                     print(error)
                 }
             }
     }
     
-    static func getCurrentTaskPreview(with index: Int) -> TaskPreviewDTO {
-        return TaskPreviewDTO()
+    private static func JSONToTaskPreview(_ json: JSON) -> TaskPreviewDTO {
+        let resultTask = TaskPreviewDTO()
+        resultTask.id = Int.init(json["id"].stringValue) ?? 0
+        resultTask.name = json["name"].stringValue == "" ? "empty" : json["name"].stringValue
+        resultTask.count = Int.init(json["countOfTasks"].stringValue) ?? 0
+        resultTask.hardLevel = Int.init(json["hardLevel"].stringValue) ?? 0
+        
+        return resultTask
     }
 }
