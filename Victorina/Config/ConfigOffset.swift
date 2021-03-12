@@ -8,5 +8,5 @@
 import UIKit
 
 struct ConfigOffset {
-    static let presentedXOffsetForSwipe: CGFloat = 150
+    static let presentedXOffsetForSwipe: CGFloat = UIScreen.main.bounds.width / 4
 }

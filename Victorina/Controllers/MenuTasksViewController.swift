@@ -8,7 +8,8 @@
 import UIKit
 
 class MenuTaskViewController: UIViewController {
-    let tasks: [TasksDTO] = [TasksDTO(name: "test", hardLevel: 1, tasks: [SimpleTask(name: "first", descriptions: "testtesttesttest", answers: [("True", true), ("False", false)], flagOfAnsweresType: false)]), TasksDTO(name: "test", hardLevel: 1, tasks: [SimpleTask(name: "first", descriptions: "testtesttlkadfakldjlakdjladjlakwjdlkadjlakjdlakdjlakjdlakwdjalkwdjalkjdlakjdalkjdlkajdlkajdlkajdladjlakdjlkadjlkadjlkajwdlwefhwekfnlakfnsejkfneksfjnskjfnskjefnslkfjnslefknsjefklnfklsejnfalwdkjmasjnfaowidsncslifkjnsdliafkjdfghjkhjeafkjsdbfnmdakjefaljfkdsnmflaiwehf;uafhiwufjklbsflashfiuanfjbdskjbwe;fihlhKLWJKFHLAIOWHFAWOFHWJKSBFLEBGSKHJDFIUSEHFKBJFSKEJEHLkesgksgkjdbvlaueirghaiefhewfuhefiluwbgfiwuefhwefeueoiejoeijfeighvnsdkjvneohfnsdkne;osvnkselncldsbvkjnse;ogidjkgnlsnlghsoihpe;akjvnaekfjnja;ilfbnkadnvlewf woe fojv naofejinejnca k;slfjncaiedsnjvklaes fnaivel ;nfioew ;jfn;ckesttest", answers: [("True", true), ("False", true)], flagOfAnsweresType: true)]), TasksDTO(name: "test", hardLevel: 1, tasks: [SimpleTask(name: "first", descriptions: "testtesttesttest", answers: [("True", false), ("False", false)], flagOfAnsweresType: false)])]
+    
+    var task: TaskPreviewDTO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +34,17 @@ class MenuTaskViewController: UIViewController {
 }
 
 extension MenuTaskViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.count
+        TaskPreviewService.getCountTaskPreview()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        let task = tasks[indexPath.row]
+        task = TaskPreviewService.getCurrentTaskPreview(with: indexPath.row)
 
         cell.textLabel?.text = task.name
-        cell.detailTextLabel?.text = "Level: " + String(tasks[indexPath.row].hardLevel)
+        cell.detailTextLabel?.text = "Level: \(task.hardLevel)"
         cell.textLabel?.textColor = ConfigColors.tableTextColor
         cell.backgroundColor = ConfigColors.backgroundMenuTableColor
         cell.accessoryType = .disclosureIndicator
@@ -51,14 +53,14 @@ extension MenuTaskViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard tasks[indexPath.row].tasks.count > 0 else {
+        guard task.count > 0 else {
             let undefineTask = UndefineTaskViewController()
             undefineTask.modalPresentationStyle = .fullScreen
             present(undefineTask, animated: true, completion: nil)
             return
         }
         let taskViewController = TaskViewController()
-        taskViewController.tasks = tasks[indexPath.row]
+        taskViewController.taskPreviewId = task.id
         taskViewController.modalPresentationStyle = .fullScreen
         present(taskViewController, animated: true, completion: nil)
     }

@@ -64,38 +64,17 @@ class TaskVideDTO: AbstractTask {
     }
 }
 
-class TasksDTO {
-    var name: String = "empty"
-    var hardLevel: Int = 0
-    var tasks: [AbstractTask] = []
+class TaskPreviewDTO {
+    var id: Int
+    var name: String
+    var hardLevel: Int
+    var count: Int
+    var tasks: [AbstractTask]
     
-    init() {}
-    
-    init(name: String = "empty", hardLevel: Int = 0, tasks: [AbstractTask] = []) {
+    init(id: Int, name: String, hardLevel: Int, count: Int, tasks: [AbstractTask]) {
         self.name = name
         self.hardLevel = hardLevel
+        self.count = count
         self.tasks = tasks
     }
-    
-    func addTask(newElement task: AbstractTask) {
-        tasks.append(task)
-    }
-    
-    func addTask(contentsOf tasks: [AbstractTask]) {
-        self.tasks.append(contentsOf: tasks)
-    }
-    
-    func isInclude(by index: Int) -> Bool {
-        return index < tasks.count
-    }
-    
-    func getTask(byIndex index: Int) -> AbstractTask {
-        return tasks[index]
-    }
-    
-    func countOfTasks() -> Int {
-        return tasks.count
-    }
 }
-
-
